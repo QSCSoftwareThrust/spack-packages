@@ -26,7 +26,7 @@ Follow the [spack packaging guidelines](https://spack.readthedocs.io/en/latest/p
 
 ### Example: qrisp
 
-This package is available [at PyPI](https://pypi.org/project/qrisp/#qrisp-0.7.19.tar.gz), which provides a link to a tar.gz file.
+This package is available [at PyPI](https://pypi.org/project/qrisp/#qrisp-0.7.19.tar.gz), which provides a link to a tar.gz file. It's just a simple python package installed with a setup.py.
 
 ```console
 $ spack create -N qsc https://files.pythonhosted.org/packages/.../qrisp-0.7.19.tar.gz
