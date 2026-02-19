@@ -15,10 +15,6 @@ class PyPhysicsTenpy(PythonPackage):
     pypi = "physics_tenpy/physics_tenpy-1.1.0.tar.gz"
     git = "https://github.com/tenpy/tenpy.git"
 
-    # FIXME: Add a list of GitHub accounts to
-    # notify when the package is updated.
-    # maintainers("github_user1", "github_user2")
-
     license("Apache-2.0", checked_by="cferenba")
 
     version("main", branch="main")
