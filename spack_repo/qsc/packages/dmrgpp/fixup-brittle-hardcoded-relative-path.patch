@@ -1,0 +1,25 @@
+From 88689dd168d1afd24fb693c646dfda6d66b70061 Mon Sep 17 00:00:00 2001
+From: Damien L-G <dalg24@gmail.com>
+Date: Tue, 7 Apr 2026 14:08:54 -0400
+Subject: [PATCH 1/3] Fix PsimagLite Version.h header include in
+ LanczosPlusPlus
+
+---
+ LanczosPlusPlus/src/Engine/LanczosDriver.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/LanczosPlusPlus/src/Engine/LanczosDriver.h b/LanczosPlusPlus/src/Engine/LanczosDriver.h
+index d34021d2..0ea7f044 100644
+--- a/LanczosPlusPlus/src/Engine/LanczosDriver.h
++++ b/LanczosPlusPlus/src/Engine/LanczosDriver.h
+@@ -1,6 +1,6 @@
+ #ifndef LANCZOSDRIVER_H
+ #define LANCZOSDRIVER_H
+-#include "../../../dmrgpp/PsimagLite/src/Version.h"
++#include "../../PsimagLite/src/Version.h"
+ #include "../Version.h"
+ #include "AllocatorCpu.h"
+ #include "PsimagLite.h"
+-- 
+2.50.1 (Apple Git-155)
+
