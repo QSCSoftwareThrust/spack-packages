@@ -36,27 +36,6 @@ class Dmrgpp(CMakePackage):
     depends_on("blas")
     depends_on("lapack")
 
-    variant("boost", default=True, description="enable Boost")
-    depends_on("boost", when="+boost")
+    depends_on("boost")
 
-    # NOTE HDF5 currently required dependency
     depends_on("hdf5+cxx+hl")
-
-    def my_define_from_variant(self, variant, PackageName):
-        if not self.has_variant(variant):
-            raise KeyError('"{0}" is not a variant of "{1}"'.format(variant, self.name))
-
-        if self.spec.variants[variant].value:
-            cmake_var = f"CMAKE_REQUIRE_FIND_PACKAGE_{PackageName}"
-        else:
-            cmake_var = f"CMAKE_DISABLE_FIND_PACKAGE_{PackageName}"
-
-        return self.define(cmake_var, True)
-
-
-    def cmake_args(self):
-        args = [
-            self.my_define_from_variant("boost", "Boost"),
-        ]
-
-        return args
