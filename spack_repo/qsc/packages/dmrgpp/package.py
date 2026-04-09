@@ -27,8 +27,6 @@ class Dmrgpp(CMakePackage):
     version("develop", branch="master")
 
     depends_on("cmake@3.31:", type="build")
-    depends_on("ninja", type="build")
-    generator("ninja")
 
     depends_on("cxx", type="build")
     depends_on("c", type="build")
