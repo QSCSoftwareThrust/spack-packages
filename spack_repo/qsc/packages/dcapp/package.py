@@ -2,23 +2,6 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-# ----------------------------------------------------------------------------
-# If you submit this package back to Spack as a pull request,
-# please first remove this boilerplate and all FIXME comments.
-#
-# This is a template package file for Spack.  We've put "FIXME"
-# next to all the things you'll want to change. Once you've handled
-# them, you can save this file and test your package like this:
-#
-#     spack install dcapp
-#
-# You can edit this file again by typing:
-#
-#     spack edit dcapp
-#
-# See the Spack documentation for more information on packaging.
-# ----------------------------------------------------------------------------
-
 from spack_repo.builtin.build_systems.cmake import CMakePackage
 from spack.package import *
 
@@ -38,8 +21,11 @@ class Dcapp(CMakePackage):
     # the license, set checked_by to your Github username.
     license("BSD-3-Clause", checked_by="PDoakORNL")
 
-    version("master", branch="master")
-    version("v2.0.0-alpha")
+    version("2.0.0-alpha", sha256="c6c7fd3bb8c49749344f439abfaaa62177038306d1526517befbb17108083280")
+
+    def url_for_version(self, version):
+        url = "https://github.com/CompFUSE/DCA/archive/refs/tags/v{0}.tar.gz"
+        return url.format(version)
 
     depends_on("cmake", type="build")
     depends_on("mpi")
@@ -59,9 +45,3 @@ class Dcapp(CMakePackage):
 
     with when("+cuda" or "+hip"):
         depends_on("magma@2.10:")
-
-
-    def install(self, spec, prefix):
-        # FIXME: Unknown build system
-        make()
-        make("install")
