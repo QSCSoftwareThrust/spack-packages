@@ -35,5 +35,5 @@ class Qiree(CMakePackage):
         args = [
             self.define_from_variant("QIREE_USE_LIGHTNING", "lightning"),
             self.define_from_variant("QIREE_USE_QSIM", "qsim"),
-            ]
+        ]
         return args
