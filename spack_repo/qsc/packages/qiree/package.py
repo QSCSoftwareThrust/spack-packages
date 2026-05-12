@@ -8,7 +8,9 @@ from spack.package import *
 
 
 class Qiree(CMakePackage):
-    """FIXME: Put a proper description of your package here."""
+    """The QIR Execution Engine library provides interfaces for easily
+    processing Quantum Intermediate Representation code using the LLVM
+    execution engine."""
 
     homepage = "https://github.com/ORNL-QCI/qiree"
     url = "https://github.com/ORNL-QCI/qiree/archive/refs/tags/v0.1.0.tar.gz"
