@@ -27,6 +27,7 @@ class PyClifft(PythonPackage):
     version("main", branch="main")
     version("0.4.1", sha256="518c9d961a8e0caf4ff2eb90bdff30ece2fa4a982764d1b2e0a462d4f77319ef")
 
+    depends_on("c", type="build")
     depends_on("cxx", type="build")
 
     depends_on("python@3.12:", type=("build", "run"))
